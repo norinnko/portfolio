@@ -104,6 +104,13 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 .pager span { min-width: 3.2em; text-align: center; }
 
 .show-no { font-size: .75rem; color: var(--accent); }
+.award {
+  display: inline-block; margin-top: 8px;
+  font-size: .78rem; font-weight: 700; color: var(--accent);
+  border: 1px solid var(--accent); padding: 1px 10px;
+}
+.hero-news { margin-top: 28px; font-size: .88rem; }
+.hero-news b { color: var(--accent); font-weight: 700; margin-right: .6em; }
 .show h3 { font-size: 1.5rem; font-weight: 700; margin: 2px 0 10px; letter-spacing: .02em; }
 .show-desc { color: var(--ink); }
 .points { margin-top: 14px; font-size: .9rem; color: var(--sub); }

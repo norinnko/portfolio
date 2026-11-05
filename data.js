@@ -64,7 +64,13 @@ const WORKS = [
   {
     title: "AIおぴにおん",
     category: "Web App",
-    desc: "カメラに映った顔を GPT-4o が見て、架空の「生体異常」をでたらめに診断するジョークアプリです。医療機器っぽい見た目にこだわりました。",
+    desc: "全日本AIハッカソン 2026 の予選に、チーム「のりもんすたー」として出場して作った作品です。当日発表されたテーマ「デタラメ」に合わせ、カメラに映った顔を GPT-4o が見て、架空の「生体異常」をでたらめに診断するアプリを3時間で作りました。",
+    points: [
+      "予選 Bブロック 1位で本選進出",
+      "本選は 2026年11月7日、東京（ベルサール渋谷ファースト）",
+      "医療機器のような見た目にこだわり、真面目な画面でふざけた診断が出る落差を狙った",
+    ],
+    award: { label: "全日本AIハッカソン 2026 本選進出", url: "https://www.aifestival.jp/news/japanaihack2026-03" },
     tags: ["JavaScript", "OpenAI API（GPT-4o Vision）", "カメラ API"],
     url: "https://ai-hack.norinko.jp/",
     repo: "",

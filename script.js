@@ -20,7 +20,8 @@ $("#theme").addEventListener("click", () => {
 const link = (href, label, cls = "") => `<a href="${esc(href)}" target="_blank" rel="noopener" class="${cls}">${label}</a>`;
 const tech = (tags) => `<p class="tech mono">${tags.map(esc).join(" / ")}</p>`;
 
-const LIVE = WORKS.filter((w) => w.url);
+// 受賞・入賞のある作品を先頭に
+const LIVE = WORKS.filter((w) => w.url).sort((a, b) => !!b.award - !!a.award);
 const OTHERS = WORKS.filter((w) => !w.url);
 
 // 公開中のアプリ
@@ -40,6 +41,7 @@ $("#showcase").innerHTML = LIVE.map((w, i) => {
     </figure>
     <div>
       <p class="show-no mono">${String(i + 1).padStart(2, "0")} — ${esc(w.category)}</p>
+      ${w.award ? `<p class="award">${esc(w.award.label)}</p>` : ""}
       <h3>${esc(w.title)}</h3>
       <p class="show-desc">${esc(w.desc)}</p>
       ${w.points ? `<ul class="points">${w.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>` : ""}
@@ -47,6 +49,7 @@ $("#showcase").innerHTML = LIVE.map((w, i) => {
       ${tech(w.tags)}
       <div class="show-links">
         ${link(w.url, "サイトを開く ↗")}
+        ${w.award?.url ? link(w.award.url, "大会レポート ↗", "sub") : ""}
         ${w.repo ? link(w.repo, "GitHub ↗", "sub") : ""}
       </div>
     </div>
