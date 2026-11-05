@@ -150,8 +150,8 @@ const WORKS = [
   {
     title: "ボンボンドロップシール巡回マップ",
     category: "Web",
-    desc: "大阪・京都のお店をエリアごとにまとめた地図ページ。",
-    tags: ["HTML", "CSS", "JavaScript"],
+    desc: "大阪・京都でシールを扱うお店を、エリアごとに地図にまとめたページ。回る順番を地図で一目で考えられるようにしました。",
+    tags: ["HTML", "CSS", "JavaScript", "Leaflet", "OpenStreetMap"],
     repo: `${GITHUB}/bondoro-map`,
   },
 ];
