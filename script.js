@@ -29,9 +29,11 @@ const OTHERS = WORKS.filter((w) => !isLive(w));
 $("#showcase").innerHTML = LIVE.map((w, i) => {
   const slides = w.slides || [];
   const host = w.url ? new URL(w.url).host : w.caption || "";
+  // 画像は自分のいる側から、文章は反対側から入ってくる
+  const [imgFrom, textFrom] = i % 2 === 0 ? ["left", "right"] : ["right", "left"];
   return `
   <article class="show">
-    <figure>
+    <figure class="slide-in from-${imgFrom}">
       <div class="frame">
         ${slides.map((src, j) => `<img src="${esc(src)}" alt="${esc(w.title)} の画面 ${j + 1}" loading="lazy" class="${j === 0 ? "on" : ""}">`).join("")}
       </div>
@@ -40,7 +42,7 @@ $("#showcase").innerHTML = LIVE.map((w, i) => {
         ${slides.length > 1 ? `<span class="pager mono"><button data-d="-1" aria-label="前の画像">←</button><span>1 / ${slides.length}</span><button data-d="1" aria-label="次の画像">→</button></span>` : ""}
       </figcaption>
     </figure>
-    <div>
+    <div class="slide-in from-${textFrom} delay">
       <p class="show-no mono">${String(i + 1).padStart(2, "0")} — ${esc(w.category)}</p>
       ${w.award ? `<p class="award">${esc(w.award.label)}</p>` : ""}
       <h3>${esc(w.title)}</h3>
@@ -95,3 +97,16 @@ $("#work-list").innerHTML = OTHERS.map((w) => `
 // スキル
 $("#skill-list").innerHTML = SKILLS.map((g) =>
   `<dt>${esc(g.group)}</dt><dd>${g.items.map(esc).join("、")}</dd>`).join("");
+
+// スクロールで表示（見出しと一覧は下から、公開中のアプリは左右から）
+$$(".section-head, .work-list li").forEach((el) => el.classList.add("slide-in", "from-below"));
+$$(".work-list li").forEach((el, i) => el.style.setProperty("--d", `${(i % 4) * 80}ms`));
+if ("IntersectionObserver" in window && !reduceMotion) {
+  root.classList.add("motion");
+  const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    e.target.classList.add("in");
+    io.unobserve(e.target);
+  }), { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+  $$(".slide-in").forEach((el) => io.observe(el));
+}

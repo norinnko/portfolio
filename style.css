@@ -159,3 +159,19 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
   main { padding: 0 16px; }
   .hero { padding: 56px 0 48px; }
 }
+
+/* スクロールで表示（JS が動くときだけ隠す） */
+.motion .slide-in {
+  opacity: 0;
+  transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1);
+  transition-delay: var(--d, 0ms);
+}
+.motion .slide-in.delay { --d: 150ms; }
+.motion .from-left { transform: translateX(-80px); }
+.motion .from-right { transform: translateX(80px); }
+.motion .from-below { transform: translateY(24px); }
+.motion .slide-in.in { opacity: 1; transform: none; }
+@media (max-width: 800px) {
+  .motion .from-left { transform: translateX(-32px); }
+  .motion .from-right { transform: translateX(32px); }
+}
