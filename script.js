@@ -21,13 +21,14 @@ const link = (href, label, cls = "") => `<a href="${esc(href)}" target="_blank" 
 const tech = (tags) => `<p class="tech mono">${tags.map(esc).join(" / ")}</p>`;
 
 // 受賞・入賞のある作品を先頭に
-const LIVE = WORKS.filter((w) => w.url).sort((a, b) => !!b.award - !!a.award);
-const OTHERS = WORKS.filter((w) => !w.url);
+const isLive = (w) => w.url || w.live;
+const LIVE = WORKS.filter(isLive).sort((a, b) => !!b.award - !!a.award);
+const OTHERS = WORKS.filter((w) => !isLive(w));
 
 // 公開中のアプリ
 $("#showcase").innerHTML = LIVE.map((w, i) => {
   const slides = w.slides || [];
-  const host = new URL(w.url).host;
+  const host = w.url ? new URL(w.url).host : w.caption || "";
   return `
   <article class="show">
     <figure>
@@ -48,7 +49,7 @@ $("#showcase").innerHTML = LIVE.map((w, i) => {
       ${w.note ? `<p class="note">※ ${esc(w.note)}</p>` : ""}
       ${tech(w.tags)}
       <div class="show-links">
-        ${link(w.url, "サイトを開く ↗")}
+        ${w.url ? link(w.url, "サイトを開く ↗") : ""}
         ${w.award?.url ? link(w.award.url, "大会レポート ↗", "sub") : ""}
         ${w.repo ? link(w.repo, "GitHub ↗", "sub") : ""}
       </div>

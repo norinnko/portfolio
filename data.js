@@ -1,5 +1,6 @@
 // ===== ここを編集すればサイトの中身が変わります =====
 // url: 公開URL（あれば「公開中のアプリ」に画像付きで表示）
+// live: true なら URL を出さずに「公開中のアプリ」に表示（caption に表示する文言）
 // repo: GitHubリポジトリURL（無ければ ""）
 // slides: 実機画面のスクリーンショット（img/ フォルダ）
 // points: 箇条書きで見せたい機能（任意）, note: 補足（任意）
@@ -32,6 +33,25 @@ const WORKS = [
     url: "https://shukatsu.norinko.jp/",
     repo: `${GITHUB}/shukatsu-manager`,
     slides: ["img/shukatsu-0.jpg", "img/shukatsu-1.jpg"],
+  },
+  {
+    title: "店舗の日報アプリ",
+    category: "Web App",
+    desc: "飲食店で実際に運用している、スタッフ用の日報アプリです。紙やグループ LINE に散らばっていた振り返りを1か所に集め、あとから検索できるようにしました。",
+    points: [
+      "日報は「事実／解釈／次へ」の3欄。見たことと受け取り方を分けて書く",
+      "お店全体の「共通認識」（いまの目標）を掲げ、それに沿った日報を絞り込める",
+      "共用端末でも安心なように「〇〇さんとしてログイン中」を常に表示。パスワードを続けて間違えるとロック",
+      "管理者の引き継ぎ手順をアプリ内に用意し、毎日 GitHub Actions で自動バックアップ",
+      "Cloudflare の無料枠だけで運用（費用 0 円）",
+    ],
+    note: "お店で運用中のため URL は非公開です。画面内の店名・人名は架空のものに差し替えています。",
+    tags: ["JavaScript", "Cloudflare Workers", "Cloudflare D1", "GitHub Actions"],
+    live: true,
+    caption: "店舗で運用中（URL 非公開）",
+    url: "",
+    repo: "",
+    slides: ["img/nippo-1.jpg"],
   },
   {
     title: "NoriNews",
