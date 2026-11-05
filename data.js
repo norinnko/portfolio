@@ -27,11 +27,11 @@ const WORKS = [
       "Gmail から就活メールを取り込み、AI が「要対応か」を判定",
       "ES の回答を設問ごとに保存して、別の企業用に複製",
     ],
-    note: "個人データを扱うため、ログインは許可したアカウントのみです。",
+    note: "個人データを扱うため、ログインは許可したアカウントのみです。画面内の企業名は架空のものに差し替えています。",
     tags: ["Laravel", "React", "TypeScript", "Inertia.js", "MariaDB", "Google Calendar API", "Gmail API", "LINE Messaging API", "OpenAI API"],
     url: "https://shukatsu.norinko.jp/",
     repo: `${GITHUB}/shukatsu-manager`,
-    slides: ["img/shukatsu-1.jpg"],
+    slides: ["img/shukatsu-0.jpg", "img/shukatsu-1.jpg"],
   },
   {
     title: "NoriNews",
