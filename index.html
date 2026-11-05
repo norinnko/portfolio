@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>藤井 則行 | Portfolio</title>
+  <meta name="description" content="藤井則行のポートフォリオ。作ったものと、実際に動いているアプリを載せています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho:wght@600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a href="#top" class="logo">藤井 則行</a>
+    <nav>
+      <a href="#live">公開中</a>
+      <a href="#works">制作物</a>
+      <a href="#skills">スキル</a>
+    </nav>
+    <button id="theme" class="theme-btn" aria-label="テーマ切り替え">◐</button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="hero-meta mono">Portfolio — Web / Security</p>
+      <h1>藤井 則行<small>Fujii Noriyuki</small></h1>
+      <div class="hero-text">
+        <p>
+          自分が「あったらいいな」と思ったものを作って、実際にサーバーで動かしています。
+          就活の管理、毎朝のニュース集め、CTF の勉強用ツールなど、どれも自分で毎日使っているものです。
+        </p>
+        <p>
+          最近はセキュリティに興味があり、脆弱性診断の練習環境やハニーポットも作りました。
+        </p>
+      </div>
+      <ul class="hero-links">
+        <li><a href="#live">公開中のアプリを見る ↓</a></li>
+        <li><a href="https://github.com/norinnko" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+    </section>
+
+    <section id="live" class="section">
+      <header class="section-head">
+        <h2>公開中のアプリ</h2>
+        <p>実際に動いているものです。画像はすべて本番環境の画面です。</p>
+      </header>
+      <div id="showcase" class="showcase"></div>
+    </section>
+
+    <section id="works" class="section">
+      <header class="section-head">
+        <h2>そのほかの制作物</h2>
+        <p>ソースコードは GitHub に置いています。</p>
+      </header>
+      <ol id="work-list" class="work-list"></ol>
+    </section>
+
+    <section id="skills" class="section">
+      <header class="section-head">
+        <h2>使っている技術</h2>
+      </header>
+      <dl id="skill-list" class="skill-list"></dl>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>藤井 則行 · <a href="https://github.com/norinnko" target="_blank" rel="noopener">github.com/norinnko</a></p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
