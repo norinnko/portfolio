@@ -2,7 +2,7 @@
 
 藤井則行のポートフォリオサイトです。
 
-**https://portfolio.norinko.jp/**
+**https://norinko.jp/**
 
 ## 構成
 
@@ -20,8 +20,8 @@
 
 ## 公開
 
-コアサーバーの `~/domains/portfolio.norinko.jp/public_html/` に、`.claude` と `README.md` 以外のファイルをそのまま置いています。
+コアサーバーの `~/domains/norinko.jp/public_html/` に、`.claude` と `README.md` 以外のファイルをそのまま置いています。
 
 ```bash
-scp -r index.html style.css script.js data.js favicon.svg apple-touch-icon.png img <user>@<server>:domains/portfolio.norinko.jp/public_html/
+scp -r index.html style.css script.js data.js favicon.svg apple-touch-icon.png img <user>@<server>:domains/norinko.jp/public_html/
 ```
