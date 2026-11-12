@@ -23,5 +23,5 @@
 コアサーバーの `~/domains/norinko.jp/public_html/` に、`.claude` と `README.md` 以外のファイルをそのまま置いています。
 
 ```bash
-scp -r index.html style.css script.js data.js favicon.svg apple-touch-icon.png img <user>@<server>:domains/norinko.jp/public_html/
+scp -r index.html style.css script.js data.js favicon.svg apple-touch-icon.png robots.txt sitemap.xml img <user>@<server>:domains/norinko.jp/public_html/
 ```

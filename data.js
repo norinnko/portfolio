@@ -142,9 +142,9 @@ const WORKS = [
     repo: `${GITHUB}/norimoney`,
   },
   {
-    title: "不動産物件管理",
-    category: "Web App",
-    desc: "賃貸物件の情報を PC で一括管理するアプリの試作。ネットにつながっていない PC でもダブルクリックで起動できるようにしました。",
+    title: "不動産物件管理システム",
+    category: "受託開発",
+    desc: "不動産会社から依頼を受け、報酬をいただいて制作した賃貸物件の管理システムです。ネットにつながっていない PC でもダブルクリックで起動できる構成にしました。GitHub にあるのは公開用のデモ版（データはすべて架空）で、実際に納品したものとは異なります。",
     tags: ["Python", "Django", "SQLite", "Bootstrap"],
     repo: `${GITHUB}/norirental`,
   },
