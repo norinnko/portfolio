@@ -23,5 +23,17 @@
 コアサーバーの `~/domains/norinko.jp/public_html/` に、`.claude` と `README.md` 以外のファイルをそのまま置いています。
 
 ```bash
-scp -r index.html style.css script.js data.js favicon.svg apple-touch-icon.png robots.txt sitemap.xml img <user>@<server>:domains/norinko.jp/public_html/
+scp -r index.html style.css script.js data.js favicon.svg apple-touch-icon.png robots.txt sitemap.xml img hackathon-2026 <user>@<server>:domains/norinko.jp/public_html/
 ```
+
+## ハッカソンの記事ページとコメント
+
+`hackathon-2026/` は全日本AIハッカソン 2026 優勝の記事ページです（トップページの「速報」とは別）。
+
+- コメントは `comments.php` が受け付け、**承認待ち**として保存します。承認したものだけが記事に表示されます。
+- 承認・削除は `hackathon-2026/admin.php` から（パスワードでログイン）。新しいコメントが届くとメールで通知します。
+- 保存先と設定は公開フォルダの外 `~/domains/norinko.jp/data/` にあり、このリポジトリには含めていません。
+  - `config.php`：管理パスワードのハッシュ・通知先・ソルト
+  - `comments.json`：コメント本体
+- ボット対策：見えない入力欄、画面を開いてすぐの送信を無視、同じ人の連投は60秒あける、URL 禁止、400文字まで。
+- サーバーの PHP は 7.4 なので、それで動く書き方にしています。

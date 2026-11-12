@@ -165,6 +165,7 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 .award-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px; font-size: .85rem; }
 .award-links a { text-decoration: none; border-bottom: 1px solid var(--rule); }
 .award-links a:hover { color: var(--accent); border-color: var(--accent); }
+.award-links a.award-more { font-weight: 700; border-bottom: 2px solid var(--accent); }
 .show h3 { font-size: 1.5rem; font-weight: 700; margin: 2px 0 10px; letter-spacing: .02em; }
 .show-desc { color: var(--ink); }
 .points { margin-top: 14px; font-size: .9rem; color: var(--sub); }

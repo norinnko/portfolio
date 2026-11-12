@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /hackathon-2026/admin.php
+Disallow: /hackathon-2026/comments.php
 
 Sitemap: https://norinko.jp/sitemap.xml

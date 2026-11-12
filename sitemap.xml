@@ -4,8 +4,14 @@
     <loc>https://norinko.jp/</loc>
     <lastmod>2026-11-13</lastmod>
     <image:image><image:loc>https://norinko.jp/img/ogp.png</image:loc></image:image>
+    <image:image><image:loc>https://norinko.jp/img/moji-1.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://norinko.jp/hackathon-2026/</loc>
+    <lastmod>2026-11-13</lastmod>
     <image:image><image:loc>https://norinko.jp/img/hack-banner.jpg</image:loc></image:image>
     <image:image><image:loc>https://norinko.jp/img/hack-medal.jpg</image:loc></image:image>
-    <image:image><image:loc>https://norinko.jp/img/moji-1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://norinko.jp/img/hack-venue.jpg</image:loc></image:image>
+    <image:image><image:loc>https://norinko.jp/img/moji-2.jpg</image:loc></image:image>
   </url>
 </urlset>
