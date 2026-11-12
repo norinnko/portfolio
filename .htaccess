@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# www.norinko.jp は norinko.jp に統一する
+RewriteCond %{HTTP_HOST} ^www\.norinko\.jp$ [NC]
+RewriteRule ^(.*)$ https://norinko.jp/$1 [R=301,L]
+
+# アイコンとマニフェストの形式
+AddType image/x-icon .ico
+AddType application/manifest+json .webmanifest
