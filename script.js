@@ -98,6 +98,22 @@ $("#work-list").innerHTML = OTHERS.map((w) => `
 $("#skill-list").innerHTML = SKILLS.map((g) =>
   `<dt>${esc(g.group)}</dt><dd>${g.items.map(esc).join("、")}</dd>`).join("");
 
+// 連絡先（HTML にはアドレスをそのまま書かず、収集ボット対策として JS で組み立てる）
+const mail = $("#mail");
+const address = `${mail.dataset.u}@${mail.dataset.d}`;
+mail.href = `mailto:${address}`;
+mail.textContent = address;
+const copyBtn = $("#mail-copy");
+if (navigator.clipboard) {
+  copyBtn.hidden = false;
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(address).then(() => {
+      copyBtn.textContent = "コピーしました";
+      setTimeout(() => { copyBtn.textContent = "コピー"; }, 1500);
+    }).catch(() => {});
+  });
+}
+
 // スクロールで表示（見出しと一覧は下から、公開中のアプリは左右から）
 $$(".section-head, .work-list li").forEach((el) => el.classList.add("slide-in", "from-below"));
 $$(".work-list li").forEach((el, i) => el.style.setProperty("--d", `${(i % 4) * 80}ms`));
