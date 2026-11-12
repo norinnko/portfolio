@@ -42,12 +42,28 @@ ol, ul { list-style: none; }
 .nav nav a { text-decoration: none; color: var(--sub); }
 .nav nav a:hover { color: var(--ink); }
 .theme-btn { border: 0; background: none; color: var(--sub); font-size: 1rem; cursor: pointer; }
+.nav-cta {
+  text-decoration: none; font-size: .85rem; font-weight: 700; white-space: nowrap;
+  color: var(--paper); background: var(--accent);
+  padding: 6px 16px; border: 1px solid var(--accent);
+  transition: background .2s, color .2s;
+}
+.nav-cta:hover { background: transparent; color: var(--accent); }
+@media (max-width: 560px) {
+  .nav nav { display: none; }
+}
 
 main { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
 /* Hero */
 .hero { padding: 88px 0 72px; border-bottom: 1px solid var(--rule); }
 .hero-meta { font-size: .75rem; color: var(--accent); letter-spacing: .06em; }
+.hero-status {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;
+  font-size: .8rem; font-weight: 500; padding: 3px 12px;
+  border: 1px solid var(--rule); background: var(--paper);
+}
+.hero-status .dot { width: 7px; height: 7px; border-radius: 50%; background: #16a34a; }
 .hero h1 {
   font-family: "Shippori Mincho", serif; font-weight: 800;
   font-size: clamp(2.6rem, 8vw, 4.4rem); line-height: 1.2; letter-spacing: .06em;
