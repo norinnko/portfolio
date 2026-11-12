@@ -52,7 +52,7 @@ $("#showcase").innerHTML = LIVE.map((w, i) => {
       ${tech(w.tags)}
       <div class="show-links">
         ${w.url ? link(w.url, "サイトを開く ↗") : ""}
-        ${w.award?.url ? link(w.award.url, "大会レポート ↗", "sub") : ""}
+        ${w.award?.url ? link(w.award.url, w.award.linkLabel || "大会レポート ↗", "sub") : ""}
         ${w.repo ? link(w.repo, "GitHub ↗", "sub") : ""}
       </div>
     </div>

@@ -109,8 +109,19 @@ main { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
   font-size: .78rem; font-weight: 700; color: var(--accent);
   border: 1px solid var(--accent); padding: 1px 10px;
 }
-.hero-news { margin-top: 28px; font-size: .88rem; }
-.hero-news b { color: var(--accent); font-weight: 700; margin-right: .6em; }
+.hero-award {
+  margin-top: 36px; max-width: 40em;
+  border-left: 3px solid var(--accent); padding: 4px 0 4px 20px;
+}
+.award-date { font-size: .75rem; color: var(--accent); letter-spacing: .04em; }
+.award-title {
+  font-family: "Shippori Mincho", serif; font-weight: 800;
+  font-size: clamp(1.5rem, 4.2vw, 2.1rem); line-height: 1.35; letter-spacing: .04em; margin: 2px 0 8px;
+}
+.award-body { font-size: .9rem; }
+.award-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 10px; font-size: .85rem; }
+.award-links a { text-decoration: none; border-bottom: 1px solid var(--rule); }
+.award-links a:hover { color: var(--accent); border-color: var(--accent); }
 .show h3 { font-size: 1.5rem; font-weight: 700; margin: 2px 0 10px; letter-spacing: .02em; }
 .show-desc { color: var(--ink); }
 .points { margin-top: 14px; font-size: .9rem; color: var(--sub); }
